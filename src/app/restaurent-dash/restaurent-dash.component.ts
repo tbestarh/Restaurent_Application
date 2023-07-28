@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder  } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder  } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import {RestaurentData} from './restaurent.model';
 
@@ -11,13 +11,13 @@ import {RestaurentData} from './restaurent.model';
 
 export class RestaurentDashComponent implements OnInit {
 
-  formValue!:FormGroup
+  formValue!:UntypedFormGroup
   restaurentModelObj : RestaurentData = new RestaurentData;
   allRestaurentData: any;
   showAdd!:boolean;
   showBtn!:boolean;
 
-  constructor(private formbuilder: FormBuilder, private api:ApiService) { }
+  constructor(private formbuilder: UntypedFormBuilder, private api:ApiService) { }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
